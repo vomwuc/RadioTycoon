@@ -19,8 +19,8 @@ public class GameEvent
         all_GameEvent["Artist_event"].Add(new NewsPapperArtistEvent(":B make a new song",3,3 , true,10));
         all_GameEvent["Artist_event"].Add(new NewsPapperArtistEvent("paparazi on :B", 3, 3, true,10));
         all_GameEvent["Artist_event"].Add(new NewsPapperArtistEvent("tax case against :B", 3, 3, true,10));
-
-
+        
+        
     }
 
     public GameEvent(string eventTitle, int eventPower, int GameEventspeed , bool isPositive , int probability)
