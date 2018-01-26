@@ -8,12 +8,13 @@ public class BarGraphManager : MonoBehaviour
 
     public GameObject linerenderer;
     public GameObject pointer;
-
+    public Texture2D texture2D;
     public GameObject HolderPrefb;
+    public GameObject canvas;
+    public Text income;
+    private GameObject holder;
 
-    public GameObject holder;
-
-    public Material mat;
+    private Material mat;
 
     public Text topValue;
 
@@ -83,6 +84,7 @@ public class BarGraphManager : MonoBehaviour
         float xIncrement = gap;
         int dataCount = 0;
         Vector3 startpoint = Vector3.zero;
+        GameObject canvasInstantiate = Instantiate(canvas, transform) as GameObject;
 
         while (dataCount < gd.Count)
         {
@@ -96,19 +98,21 @@ public class BarGraphManager : MonoBehaviour
             // linerenderer is an empty gameObject with Line Renderer Component Attach to it, 
             // i made a prefab of it and attach it in the inspector
             GameObject lineObj = Instantiate(linerenderer, transform.position, Quaternion.identity) as GameObject;
+            Text incomeInstantiate = Instantiate(income, canvasInstantiate.transform) as Text;
             lineObj.transform.parent = holder.transform;
             lineObj.name = dataCount.ToString();
 
             LineRenderer lineRenderer = lineObj.GetComponent<LineRenderer>();
 
-            lineRenderer.material = mat;
+            lineRenderer.material.SetTexture("a", texture2D);
             lineRenderer.SetWidth(0.15F, 0.15F);
             lineRenderer.SetVertexCount(2);
 
             while (p.transform.position.y < endpoint.y)
             {
                 p.transform.Translate(Vector3.up * Time.deltaTime * 8, Space.World);
-
+                incomeInstantiate.transform.position = new Vector3(p.transform.position.x, p.transform.position.y + 0.12f, 0f);
+                incomeInstantiate.text = p.transform.position.y.ToString();
                 lineRenderer.SetPosition(0, startpoint);
                 lineRenderer.SetPosition(1, p.transform.position);
 
@@ -117,6 +121,8 @@ public class BarGraphManager : MonoBehaviour
 
             lineRenderer.SetPosition(0, startpoint);
             lineRenderer.SetPosition(1, endpoint);
+            incomeInstantiate.transform.position = new Vector3(endpoint.x, endpoint.y + 0.12f, 0f);
+            incomeInstantiate.text = p.transform.position.y.ToString();
 
 
             p.transform.position = endpoint;
