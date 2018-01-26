@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  productGUID: 350cd67fb2f811e4e945e92cea60375e
+  productGUID: 83f37becd94b1644eba96875d12f6170
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
@@ -410,7 +410,7 @@ PlayerSettings:
   tizenGPSPermissions: 0
   tizenMicrophonePermissions: 0
   tizenDeploymentTarget: 
-  tizenDeploymentTargetType: 0
+  tizenDeploymentTargetType: 4245864
   tizenMinOSVersion: 0
   n3dsUseExtSaveData: 0
   n3dsCompressStaticMem: 1
