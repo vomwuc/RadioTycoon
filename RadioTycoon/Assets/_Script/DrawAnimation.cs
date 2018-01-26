@@ -19,7 +19,7 @@ public class DrawAnimation : MonoBehaviour {
         if (shapeIndex++ % shape == 0)
         {
             this.GetComponent<SpriteRenderer>().sprite = textures[index++];
-            index = index % (textures.Count - 1);
+            index = index % (textures.Count);
         }
 	}
 }
