@@ -68,6 +68,8 @@ public class Audiance {
             }
         }
 
+        loveStation /= (float)(radioStation.SoundQUality / 20);
+
         float pateince_factor = 1 / (pateince + IQ) * (71 - age);
         float current_avg = 0;
         float all_avg = 0;
