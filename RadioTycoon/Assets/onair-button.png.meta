@@ -1,6 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:RadioTycoon/Assets/onair-button.png.meta
 guid: 8540d4eb9635c4442a2bd69e7e38c558
 timeCreated: 1516982541
+=======
+<<<<<<< HEAD
+guid: b300e0e2e8031b74eafab9fcabccce17
+timeCreated: 1516966817
+=======
+guid: a87d5b12ed3aa9a41b553f4f5a5c9d22
+timeCreated: 1516976608
+>>>>>>> 3a0a727bb102b29795cc13471d203ed624c0eca3
+>>>>>>> 0a29c0f58e524eaf8d9fc7eb4ba5fead5a69366b:RadioTycoon/Assets/overview-scene.bmp.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

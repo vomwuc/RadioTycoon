@@ -1,16 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:RadioTycoon/Assets/ad-button.png.meta
-guid: 82f53cfee0e13f540b0bf243213c2e6c
-timeCreated: 1516982541
-=======
-<<<<<<< HEAD:RadioTycoon/Assets/ad-button.bmp.meta
-guid: b46c1fbcfd2d40f4dabdde501dc7d218
-timeCreated: 1516966817
-=======
-guid: 85bce595aa6713c42816da3386482d06
-timeCreated: 1516976608
->>>>>>> 3a0a727bb102b29795cc13471d203ed624c0eca3:RadioTycoon/Assets/ad-button.bmp.meta
->>>>>>> 0a29c0f58e524eaf8d9fc7eb4ba5fead5a69366b:RadioTycoon/Assets/ad-button.bmp.meta
+guid: 7e0ee535645a8694cac5396a6f1767f3
+timeCreated: 1516989577
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
