@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:RadioTycoon/Assets/ad-button.bmp.meta
 guid: b46c1fbcfd2d40f4dabdde501dc7d218
 timeCreated: 1516966817
+=======
+guid: 85bce595aa6713c42816da3386482d06
+timeCreated: 1516976608
+>>>>>>> 3a0a727bb102b29795cc13471d203ed624c0eca3:RadioTycoon/Assets/ad-button.bmp.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

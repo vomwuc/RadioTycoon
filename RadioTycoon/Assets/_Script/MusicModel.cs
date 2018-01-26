@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MusicModel : MonoBehaviour {
 
-    List<musicGaner> geners = new List<musicGaner>();
-    Artists artist;
-    Songs song;
+    public List<musicGaner> geners = new List<musicGaner>();
+    public Artists artist;
+    public Songs song;
 
     public MusicModel(Songs song)
     {
