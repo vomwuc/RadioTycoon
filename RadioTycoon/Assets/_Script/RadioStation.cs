@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RadioStation {
     public static List<RadioStation> allStations;
+    public List<Audiance> audianceList;
     public static int id_seq = 1;
     public int id;
     public string name;
