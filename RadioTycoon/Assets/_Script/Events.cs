@@ -2,52 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Events {
+public class Events
+{
 
     string eventTitle;
     string eventDescription;
-    int AudianceEffect ; // from 1 to 10
-    int speedEffect; // How fast it will effect
-    bool isEventPositive;
+    int eventPower;// 1 to 10
+    int eventSpeed;// 1 to 10
     string sceneToLoad;
 
-    public Events(string eventTitle , string eventDescription , int AudianceEffect , int speedEffect)
+    public Events(string eventTitle, string eventDescription, int eventPower, int eventSpeed)
     {
         this.eventTitle = eventTitle;
         this.eventDescription = eventDescription;
-        this.AudianceEffect = AudianceEffect;
-        this.speedEffect = speedEffect;
+        this.eventPower = eventPower;
+        this.eventSpeed = eventSpeed;
     }
 
     public class newsPapperEvents : Events
     {
-        public newsPapperEvents(string eventTitle, string eventDescription, int AudianceEffect, int speedEffect) : base(eventTitle, eventDescription, AudianceEffect, speedEffect)
+        public newsPapperEvents(string eventTitle, string eventDescription, int eventPower, int eventSpeed) : base(eventTitle, eventDescription, eventPower, eventSpeed)
         {
-            sceneToLoad = "newsPaperScene";
+        }
+
+        public void Update()
+        {
+
+        }
+
+    }
+
+    public class NewsPapperArtistEvent : newsPapperEvents
+    {
+        Artists artist;
+
+        public NewsPapperArtistEvent(string eventTitle, string eventDescription, int eventPower, int eventSpeed) : base(eventTitle, eventDescription, eventPower, eventSpeed)
+        {
         }
     }
 
-    public class StocksEvents : Events
+    public class NewsPapperRadioStationEvent : newsPapperEvents
     {
-        public StocksEvents(string eventTitle, string eventDescription, int AudianceEffect, int speedEffect) : base(eventTitle, eventDescription, AudianceEffect, speedEffect)
+        RadioStation radioStation;
+
+        public NewsPapperRadioStationEvent(string eventTitle, string eventDescription, int eventPower, int eventSpeed) : base(eventTitle, eventDescription, eventPower, eventSpeed)
         {
-            sceneToLoad = "newsPaperScene";
         }
     }
 
-    public class MaintenanceEvents : Events
+    public class NewsPapperEmergencyEvent : newsPapperEvents
     {
-        public MaintenanceEvents(string eventTitle, string eventDescription, int AudianceEffect, int speedEffect) : base(eventTitle, eventDescription, AudianceEffect, speedEffect)
-        {
-            sceneToLoad = "newsPaperScene";
-        }
-    }
+        List<Artists> artists;
+        List<RadioStation> radioStations;
 
-    public class EmergencyEvents : Events
-    {
-        public EmergencyEvents(string eventTitle, string eventDescription, int AudianceEffect, int speedEffect) : base(eventTitle, eventDescription, AudianceEffect, speedEffect)
+        public NewsPapperEmergencyEvent(string eventTitle, string eventDescription, int eventPower, int eventSpeed) : base(eventTitle, eventDescription, eventPower, eventSpeed)
         {
-            sceneToLoad = "newsPaperScene";
         }
     }
 }
