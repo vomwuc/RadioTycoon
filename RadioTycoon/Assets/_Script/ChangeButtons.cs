@@ -21,9 +21,6 @@ public class ChangeButtons : MonoBehaviour
         Transform[] trs = this.transform.parent.GetComponentsInChildren<Transform>(true);
         foreach (Transform t in trs)
         {
-            Debug.Log("t:" + t.gameObject.name);
-            Debug.Log("this:" + this.transform.parent.name);
-            Debug.Log(t.name);
             if (t.gameObject.GetComponent<Button>() != null && this.transform != t.parent)
             {
                 t.gameObject.GetComponent<Button>().interactable = !t.gameObject.GetComponent<Button>().IsInteractable();
