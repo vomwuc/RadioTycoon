@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-public enum musicType {pop,rock,metal,electric,classic}
+public enum musicGaner {pop,rock,metal,electric,classic}
 
 
-public class AudianceTypePrefernce {
+public class AudianceGanerPrefernce {
 
-    public musicType type;
+    public musicGaner type;
     public int preferedLevel;
 
-	public AudianceTypePrefernce(musicType type)
+	public AudianceGanerPrefernce(musicGaner type)
     {
         this.type = type;
         this.preferedLevel = S.random.Next(1,10);

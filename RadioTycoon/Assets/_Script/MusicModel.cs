@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicModel : MonoBehaviour {
 
-    List<musicType> type = new List<musicType>();
+    List<musicGaner> geners = new List<musicGaner>();
     Artists artist;
     Songs song;
 
@@ -12,7 +12,7 @@ public class MusicModel : MonoBehaviour {
     {
         this.song = song;
         this.artist = song.artist;
-        this.type = song.artist.artistTypes;
+        this.geners = song.artist.artistGaners;
     }
     
 }

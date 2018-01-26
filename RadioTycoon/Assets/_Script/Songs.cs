@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Songs
-{
+public class Songs{
 
     // Use this for initialization
     public Artists artist;
