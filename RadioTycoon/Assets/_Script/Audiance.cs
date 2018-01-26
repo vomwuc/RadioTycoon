@@ -24,6 +24,7 @@ public class Audiance {
     
     public Audiance()
     {
+        radioStation = RadioStation.allStations[0];
         id = id_sequence++;
         PreferedGaners = new List<AudianceGanerPrefernce>();
         pateince = S.random.Next(S.MIN_ABILITY_VALUE, S.MAX_ABILITY_VALUE);
@@ -37,7 +38,10 @@ public class Audiance {
         foreach (musicGaner m in Enum.GetValues(typeof(musicGaner)))
         {
            PreferedGaners.Add(new AudianceGanerPrefernce(m));
+            
         }
+        Debug.Log(PreferedGaners[0].preferedLevel);
+        radioStation.audianceList.Add(this);
     }
 
     void Update()

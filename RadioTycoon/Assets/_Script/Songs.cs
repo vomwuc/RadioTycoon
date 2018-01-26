@@ -5,6 +5,7 @@ using UnityEngine;
 public class Songs{
 
     // Use this for initialization
+    public static List<Songs> allSongs;
     public Artists artist;
     public string name;
     public int famous;

@@ -15,6 +15,7 @@ public class RadioStation {
 
 	public RadioStation(string name)
     {
+        audianceList = new List<Audiance>();
         id = id_seq++;
         balance = 1500;
         this.name = name;
