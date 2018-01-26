@@ -17,7 +17,6 @@ public class DrawAnimation : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
         if(!draw)
         {
             this.GetComponent<SpriteRenderer>().sprite = null;

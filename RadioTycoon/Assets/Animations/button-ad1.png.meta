@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:RadioTycoon/Assets/Animations/button-ad1.png.meta
 guid: c3d8e88c87abbfc48a0c39c9626fcfc9
 timeCreated: 1516992815
+=======
+guid: fd9eed16190942849a7df734b94763da
+timeCreated: 1516993229
+>>>>>>> 358d32d5db8a87acbf061ca9a9ebd98aa322c686:RadioTycoon/Assets/Animations/button-ad1.png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

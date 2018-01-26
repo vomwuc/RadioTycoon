@@ -5,7 +5,8 @@ using System.Text;
 using UnityEngine;
 
 public class Stocks : MonoBehaviour
-    {
+{
+
         private const int AUDIANCE_GRAPH_BARS_AMOUNT = 0;
         private const int BALANCE_GRAPH_BARS_AMOUNT = 0;
         private List<int> audianceGraph;
@@ -16,7 +17,6 @@ public class Stocks : MonoBehaviour
             audianceGraph = new List<int>(AUDIANCE_GRAPH_BARS_AMOUNT);
             balanceGraph = new List<int>(BALANCE_GRAPH_BARS_AMOUNT);
         }
-    
 
     float totalTime = 120f; //2 minutes
 
@@ -39,6 +39,6 @@ public class Stocks : MonoBehaviour
             minutes += 1;
         }
 
-       // timer.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+//        timer.text = minutes.ToString("00") + ":" + seconds.ToString("00");
     }
 }
