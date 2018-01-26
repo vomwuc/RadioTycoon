@@ -7,7 +7,7 @@ public class Audiance {
 
     public static int id_sequence;
     public int id;
-    public List<AudianceTypePrefernce>PreferedTypes;
+    public List<AudianceGanerPrefernce>PreferedGaners;
     public List<AudianceArtistPrefernce> ArtistPrefernce;
     public List<AudianceSongPrefernce> PreferedSongs;
     public int pateince;
@@ -25,7 +25,7 @@ public class Audiance {
     public Audiance()
     {
         id = id_sequence++;
-        PreferedTypes = new List<AudianceTypePrefernce>();
+        PreferedGaners = new List<AudianceGanerPrefernce>();
         pateince = S.random.Next(S.MIN_ABILITY_VALUE, S.MAX_ABILITY_VALUE);
         extremism = S.random.Next(S.MIN_ABILITY_VALUE, S.MAX_ABILITY_VALUE);
         IQ = S.random.Next(S.MIN_ABILITY_VALUE, S.MAX_ABILITY_VALUE);
@@ -34,9 +34,9 @@ public class Audiance {
         gender = S.random.Next(1,2) % 2 == 1 ? 'M' : 'F';
         name = "RAZ SAMUEL";
 
-        foreach (musicType m in Enum.GetValues(typeof(musicType)))
+        foreach (musicGaner m in Enum.GetValues(typeof(musicGaner)))
         {
-           PreferedTypes.Add(new AudianceTypePrefernce(m));
+           PreferedGaners.Add(new AudianceGanerPrefernce(m));
         }
     }
 
@@ -45,9 +45,9 @@ public class Audiance {
 
         float loveStation = 0;
 
-        foreach (AudianceTypePrefernce MyPreferedGener in PreferedTypes)
+        foreach (AudianceGanerPrefernce MyPreferedGener in PreferedGaners)
         {
-            if(radioStation.music.type.Contains(MyPreferedGener.type)) {
+            if(radioStation.music.geners.Contains(MyPreferedGener.type)) {
                 loveStation += MyPreferedGener.preferedLevel;
             }
         }

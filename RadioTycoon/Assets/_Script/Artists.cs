@@ -8,12 +8,12 @@ public class Artists {
     public static List<Artists> allArtists = new List<Artists>();
     public string name;
     public int famous;
-    public List<musicType> artistTypes = new List<musicType>();
+    public List<musicGaner> artistGaners = new List<musicGaner>();
     public List<Songs> artistSongs = new List<Songs>();
     
-    public Artists(List<musicType> artistTypes,List<Songs>artistSongs,string name,int famous)
+    public Artists(List<musicGaner> artistGaners, List<Songs>artistSongs, string name, int famous)
     {
-        this.artistTypes = artistTypes;
+        this.artistGaners = artistGaners;
         this.artistSongs = artistSongs;
         this.name = name;
         this.famous = famous;
