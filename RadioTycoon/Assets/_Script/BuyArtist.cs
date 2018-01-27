@@ -23,7 +23,7 @@ public class BuyArtist : MonoBehaviour {
                 {
                     LastOperationWorked = true;
                     radioStation.balance -= artist.price;
-                    Debug.Log(radioStation.balance);
+                    radioStation.ArtistBougth.Add(artist);
                 }
             }
         }

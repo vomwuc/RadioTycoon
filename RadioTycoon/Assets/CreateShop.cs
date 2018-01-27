@@ -18,6 +18,7 @@ public class CreateShop : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+      //  S.init();
         artistsToBuy = Artists.allArtists;
         Debug.Log(artistsToBuy.Count);
         //  totalObjects = Text.Count;

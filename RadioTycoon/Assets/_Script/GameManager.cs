@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     int timeIndex = 0;
 	// Use this for initialization
 	void Start () {
+        Debug.Log("init");
         S.init();
         baseStation = RadioStation.allStations[0];
 
