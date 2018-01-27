@@ -28,4 +28,10 @@ public class ChangeButtons : MonoBehaviour
             }
         }
     }
+
+    public void changeComercialStatus()
+    {
+        RadioStation.allStations[0].isComercial = !RadioStation.allStations[0].isComercial;
+    }
+
 }

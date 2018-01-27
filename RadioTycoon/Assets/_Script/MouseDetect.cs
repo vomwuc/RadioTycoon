@@ -6,6 +6,5 @@ public class MouseDetect : MonoBehaviour {
 
     void OnMouseDown()
     {
-        Debug.Log("clicked");
     }
 }

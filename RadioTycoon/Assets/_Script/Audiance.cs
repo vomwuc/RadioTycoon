@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Audiance {
 
+    public static List<Audiance> all_audiance = new List<Audiance>();
     public static int id_sequence;
     public int id;
     public List<AudianceGanerPrefernce>PreferedGaners;
@@ -27,6 +28,8 @@ public class Audiance {
         radioStation = RadioStation.allStations[0];
         id = id_sequence++;
         PreferedGaners = new List<AudianceGanerPrefernce>();
+        ArtistPrefernce = new List<AudianceArtistPrefernce>();
+        PreferedSongs = new List<AudianceSongPrefernce>();
         pateince = S.random.Next(S.MIN_ABILITY_VALUE, S.MAX_ABILITY_VALUE);
         extremism = S.random.Next(S.MIN_ABILITY_VALUE, S.MAX_ABILITY_VALUE);
         IQ = S.random.Next(S.MIN_ABILITY_VALUE, S.MAX_ABILITY_VALUE);
@@ -34,17 +37,25 @@ public class Audiance {
         pateince = S.random.Next(S.MIN_ABILITY_VALUE, S.MAX_ABILITY_VALUE);
         gender = S.random.Next(1,2) % 2 == 1 ? 'M' : 'F';
         name = "RAZ SAMUEL";
-
         foreach (musicGaner m in Enum.GetValues(typeof(musicGaner)))
         {
            PreferedGaners.Add(new AudianceGanerPrefernce(m));
             
         }
-        Debug.Log(PreferedGaners[0].preferedLevel);
+
+        foreach(Artists artist in Artists.allArtists)
+        {
+            ArtistPrefernce.Add(new AudianceArtistPrefernce(artist));
+        }
+        foreach (Songs song in Songs.allSongs)
+        {
+            PreferedSongs.Add(new AudianceSongPrefernce(song));
+        }
+
         radioStation.audianceList.Add(this);
     }
 
-    void Update()
+    public void Update()
     {
 
         float loveStation = 0;
@@ -72,28 +83,26 @@ public class Audiance {
             }
         }
 
+        loveStation = !radioStation.isComercial ? loveStation * Mathf.Max((radioStation.framesWithMusic / 120),1) :loveStation / (radioStation.COMERCIAL_FACTOR * Math.Max(1, radioStation.framesInComercial / 120));
         loveStation /= (float)(radioStation.SoundQUality / 20);
 
-        float pateince_factor = 1 / (pateince + IQ) * (71 - age);
+        float pateince_factor = 1 / Math.Max(1,(pateince + IQ)) * (71 - age);
         float current_avg = 0;
         float all_avg = 0;
-        for(int i =grades.Count - 1 ;i>= 0;i--)
+        int cnt = 0;
+        for(int i = 0; i< grades.Count;i++)
         {
-            if (i > grades.Count - 1 - 5)
-            {
-                current_avg += grades[i];
-            }
-            all_avg += grades[i];
+        current_avg += grades[i];
+        cnt++;
         }
-        all_avg = all_avg / grades.Count;
-
-        if(current_avg > all_avg )
-        {
-           // Remove from radioStation
-        }
+        current_avg /= cnt;
 
         grades.Add(loveStation);
 
+        if(this.id == 1)
+        {
+            Debug.Log(loveStation);
+        }
 
     }
 }
