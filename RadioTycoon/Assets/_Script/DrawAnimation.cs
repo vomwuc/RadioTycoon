@@ -9,7 +9,7 @@ public class DrawAnimation : MonoBehaviour {
     public int shape = 3;
     int shapeIndex = 0;
     public bool draw;
-
+    public int repeatOn = 0; // 0 to none 
     private void Start()
     {
         index = 0;
@@ -25,7 +25,14 @@ public class DrawAnimation : MonoBehaviour {
         if (draw && shapeIndex++ % shape == 0)
         {
             this.GetComponent<SpriteRenderer>().sprite = textures[index++];
-            index = index % (textures.Count);
+            if (index < repeatOn)
+            {
+                index = index % (textures.Count);
+            }
+            else
+            {
+                index = Mathf.Max(index % textures.Count, repeatOn);
+            }
         }
 	}
 }

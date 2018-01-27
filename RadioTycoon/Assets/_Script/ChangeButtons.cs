@@ -28,4 +28,21 @@ public class ChangeButtons : MonoBehaviour
             }
         }
     }
+
+    public void changeComercialStatus()
+    {
+        RadioStation.allStations[0].isComercial = !RadioStation.allStations[0].isComercial;
+    }
+
+    public void ChangeButtonState()
+    {
+        if(BuyArtist.LastOperationWorked)
+        {
+            this.GetComponent<Button>().interactable = false;
+            this.transform.parent.gameObject.transform.parent.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f);
+
+        }
+
+    }
+
 }

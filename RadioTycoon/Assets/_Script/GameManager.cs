@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     int timeIndex = 0;
 	// Use this for initialization
 	void Start () {
+        Debug.Log("init");
         S.init();
         baseStation = RadioStation.allStations[0];
 
@@ -15,11 +16,17 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-     //   Debug.Log("time index:" + Random.Range(0, 2) % 2);
+        foreach(Audiance aud in Audiance.all_audiance)
+        {
+            aud.Update();
+        }
+
+        baseStation.Update();
+
 		if(timeIndex ++ % 60 == 0 && Random.Range(0,2) % 2 == 0)
         {
-            new Audiance();
-            Debug.Log(baseStation.audianceList.Count);
+
+            Audiance.all_audiance.Add(new Audiance());
         }
 	}
 }

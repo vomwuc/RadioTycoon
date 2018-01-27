@@ -8,10 +8,15 @@ public class RadioStation {
     public static int id_seq = 1;
     public int id;
     public string name;
-    public int balance;
+    public float balance;
     public MusicModel music;
     public float SoundQUality;
     public float SoundRange;
+    public bool isComercial;
+    public int COMERCIAL_FACTOR = 2;
+    public int framesInComercial;
+    public int framesWithMusic = 0;
+    public List<Artists> ArtistBougth;
 
 	public RadioStation(string name)
     {
@@ -22,5 +27,20 @@ public class RadioStation {
         music = new MusicModel(Artists.allArtists[0].artistSongs[0]);
         SoundQUality = 30;
         SoundRange = 30;
+        ArtistBougth = new List<Artists>();
+    }
+
+    public void Update()
+    {
+        if(isComercial == true)
+        {
+            framesInComercial++;
+            framesWithMusic = 0;
+        }
+        else
+        {
+            framesInComercial = 0;
+            framesWithMusic++;
+        }
     }
 }
