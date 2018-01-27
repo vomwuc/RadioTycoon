@@ -101,7 +101,6 @@ public class Audiance {
 
         if(this.id == 1)
         {
-            Debug.Log(loveStation);
         }
 
     }

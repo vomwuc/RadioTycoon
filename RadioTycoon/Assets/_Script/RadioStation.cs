@@ -8,7 +8,7 @@ public class RadioStation {
     public static int id_seq = 1;
     public int id;
     public string name;
-    public int balance;
+    public float balance;
     public MusicModel music;
     public float SoundQUality;
     public float SoundRange;

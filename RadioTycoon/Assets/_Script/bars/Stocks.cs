@@ -41,7 +41,7 @@ public class Stocks : MonoBehaviour {
         if (totalSeconds == 0)
         {
             audianceGraph[audianceMaxBarsAmount - 1] = RadioStation.allStations[0].audianceList.Count;
-            balanceGraph[audianceMaxBarsAmount - 1] = RadioStation.allStations[0].balance;
+            balanceGraph[audianceMaxBarsAmount - 1] = (int)RadioStation.allStations[0].balance;
 
             for (int bar = audianceMaxBarsAmount - 2; bar >= 0; bar--)
             {

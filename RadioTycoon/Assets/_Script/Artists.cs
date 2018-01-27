@@ -10,6 +10,7 @@ public class Artists {
     public static int id_seq = 0;
     public string name;
     public int famous;
+    public float price;
     public List<musicGaner> artistGaners = new List<musicGaner>();
     public List<Songs> artistSongs = new List<Songs>();
     
@@ -20,6 +21,7 @@ public class Artists {
         this.artistSongs = artistSongs;
         this.name = name;
         this.famous = famous;
+        this.price = Random.Range(1000, 2000);
     }
 
 }
